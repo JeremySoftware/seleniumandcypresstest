@@ -53,7 +53,7 @@
         </div>
         <button id="addButton">Addieren</button>
         <div class="form-group">
-            <input type="text" id="resultText" readonly>
+            <input class="numberOut" type="text" id="resultText" readonly>
         </div>
     </div>
 
@@ -68,6 +68,12 @@
             const num2 = parseFloat(inputNum2.value);
             const sum = num1 + num2;
             resultText.value = isNaN(sum) ? "Ungültige Eingabe" : sum;
+
+            // Erstelle das Smiley-Element und füge es hinzu
+            const smiley = document.createElement('span');
+            smiley.className = 'smiley';
+            smiley.textContent = '😊';
+            addButton.appendChild(smiley);
         });
     </script>
 </body>
