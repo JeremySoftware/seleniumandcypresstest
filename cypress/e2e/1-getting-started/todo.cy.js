@@ -31,23 +31,23 @@ describe('textinput', () => {
     // to get just the first and last matched elements individually,
     // and then perform an assertion with `should`.
     cy.get('.numberIn').first().type("45");
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberIn').first().should('have.value', '45');
     cy.get('.numberIn').last().type("100");
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberIn').last().should('have.value', '100');
   })
 
   it('can not input other', () => {
     cy.get('.numberIn').should('have.length', 2)
     cy.get('.numberIn').first().type("ABC");
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberIn').first().should('have.value', '');
     cy.get('.numberIn').last().type("#");
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberIn').last().should('have.value', '');
     cy.get('.numberIn').last().type("(");
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberIn').last().should('have.value', '');
   })
 
@@ -56,7 +56,7 @@ describe('textinput', () => {
     cy.get('.numberIn').first().type("45");
     cy.get('.numberIn').last().type("100");
     cy.get('#addButton').click()
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberOut').first().should('have.value', '145');
   })
   it('negative cases', () => {
@@ -64,7 +64,7 @@ describe('textinput', () => {
     cy.get('.numberIn').first().type("-45");
     cy.get('.numberIn').last().type("-100");
     cy.get('#addButton').click()
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberOut').first().should('have.value', '-145');
   })
   it('edge cases', () => {
@@ -72,14 +72,14 @@ describe('textinput', () => {
     cy.get('.numberIn').first().type("1");
     cy.get('.numberIn').last().type("0.000000000000000000001");
     cy.get('#addButton').click()
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.numberOut').first().should('have.value', '1.000000000000000000001');
   })
 
   it('smiley', () => {
 
     cy.get('#addButton').click()
-    cy.wait(400);
+    cy.wait(10);
     cy.get('.smiley').first().should('be.visible');
   })
 
