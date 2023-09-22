@@ -4,7 +4,7 @@
   "description": "cypresstest",
   "main": "cypress.config.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development && webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
