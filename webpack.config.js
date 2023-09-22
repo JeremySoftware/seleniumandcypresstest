@@ -6,4 +6,9 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devServer: {
+    //contentBase: path.join(__dirname, "public"),
+    //publicPath: 'http://localhost:8080/',
+    //port: 8080
+    },
 };
